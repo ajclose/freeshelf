@@ -8,6 +8,7 @@
     <th>Author</th>
     <th>Description</th>
     <th>Link</th>
+    <th>Submitted By</th>
   </thead>
 
   <% @books.each do |book| %>
@@ -16,11 +17,14 @@
     <td><%= book.author %></td>
     <td><%= book.description %></td>
     <td><%= book.link %></td>
+    <td><%= link_to book.user.username, user_path(username: book.user.username) %></td>
     <td><%= link_to 'Show', book_path(book) %></td>
+    <% if book.user == @current_user %>
     <td><%= link_to 'Edit', edit_book_path(book) %></td>
     <td><%= link_to 'Delete', book_path(book),
               method: :delete,
               data: { confirm: 'Are you delete this book?' } %></td>
+              <% end %>
   </tr>
   <% end %>
 </table>

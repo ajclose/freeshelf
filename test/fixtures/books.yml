@@ -5,9 +5,11 @@ one:
   author: MyString
   description: MyString
   link: MyString
+  user: one
 
 two:
   title: MyString
   author: MyString
   description: MyString
   link: MyString
+  user: two
