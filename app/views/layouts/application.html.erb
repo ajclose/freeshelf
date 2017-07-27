@@ -10,7 +10,18 @@
 
   <body>
     <header>
-      <%= link_to 'Sign Out', logout_path, method: :delete %>
+      <h1>Freeshelf</h1>
+      <div class="nav">
+        <% if @current_user %>
+          <%= link_to 'Books', books_path %>
+          <%= link_to 'Add Book', new_book_path %>
+        <%= link_to 'Sign Out', logout_path, method: :delete %>
+        <% else %>
+        <%= link_to 'Login', login_path %>
+        <%= link_to 'Register', register_path %>
+        <% end %>
+      </div>
+
     </header>
     <%= yield %>
   </body>

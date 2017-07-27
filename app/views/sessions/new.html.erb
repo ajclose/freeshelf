@@ -2,8 +2,13 @@
 
 <%= @message %>
 <%= form_tag do %>
-  <%= text_field_tag :username, '', placeholder: "Username" %>
-  <%= password_field_tag :password, '', placeholder: "Password" %>
+<div class="">
+    <%= text_field_tag :username, '', placeholder: "Username" %>
+</div>
 
-  <%= submit_tag 'Log In' %> or <%= link_to 'Register', register_path %>
+<div class="">
+    <%= password_field_tag :password, '', placeholder: "Password" %>
+</div>
+
+  <%= submit_tag 'Log In' %>
 <% end %>
